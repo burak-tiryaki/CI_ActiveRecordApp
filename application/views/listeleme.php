@@ -23,8 +23,8 @@
                     <td><?php echo $row->username ?></td>
                     <td><?php echo $row->detail ?></td>
                     <td>
-                        <a href="#">Düzenle</a>
-                        <a href="#">Sil</a>
+                        <a href="<?php echo base_url("personel/updatePage/$row->id")?>">Düzenle</a>
+                        <a href="<?php echo base_url("personel/delete/$row->id")?>">Sil</a>
                     </td>
                 </tr>
             <?php }?>
