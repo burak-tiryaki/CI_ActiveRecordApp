@@ -8,9 +8,24 @@
 
 class Personel extends CI_Controller{
 
-    public function index(){
+    public function index($list = ""){
 
-        $rows = $this->db->get("personel")->result();
+        switch ($list){
+            case "desc":
+                $rows = $this->db->order_by("id","desc")->get("personel")->result();        
+                break;
+            case "asc":
+                $rows = $this->db->order_by("id","asc")->get("personel")->result();        
+                break;
+            case "user-asc":
+                $rows = $this->db->order_by("username","asc")->get("personel")->result();        
+                break;
+            case "user-desc":
+                $rows = $this->db->order_by("username","desc")->get("personel")->result();        
+                break;
+            default:
+                $rows = $this->db->get("personel")->result();
+        };
 
         $viewData = new stdClass();
         $viewData->rows = $rows;
