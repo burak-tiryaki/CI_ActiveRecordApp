@@ -7,8 +7,8 @@
 </head>
 <body>
     
-    <h3>Kayıtlar</h3>
-    <a href="#">Kayıt Ekle</a> <br> <br>
+    <h2>Kayıtlar</h2>
+    <a href="<?php echo base_url("personel/insertPage")?>">Kayıt Ekle</a> <br> <br>
     <table border="1">
         <thead>
             <th>ID</th>
